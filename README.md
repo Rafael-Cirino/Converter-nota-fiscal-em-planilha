@@ -1,45 +1,40 @@
-# Converter-nota-fiscal-em-planilha
-Biblioteca que faz a conversão dos dados contidos em uma nota fiscal para planilhaaa
-
-# `<Título em Português do Projeto>`
-# `<Project Title in in English>`
+# `Converter nota fiscal em planilha`
+# `Convert invoice to spreadsheet`
 
 ## Apresentação
 
-TEste, O presente projeto foi originado no contexto das atividades da disciplina de pós-graduação *EA979A - Introdução a Computação Gráfica e Processamento de Imagens*, 
+O presente projeto foi originado no contexto das atividades da disciplina de pós-graduação *EA979A - Introdução a Computação Gráfica e Processamento de Imagens*, 
 oferecida no primeiro semestre de 2022, na Unicamp, sob supervisão da Profa. Dra. Paula Dornhofer Paro Costa, do Departamento de Engenharia de Computação e Automação (DCA) da Faculdade de Engenharia Elétrica e de Computação (FEEC).
 
-> Incluir nome RA e foco de especialização de cada membro do grupo. Os grupos devem ter no máximo três integrantes.
 > |Nome  | RA | Curso|
 > |--|--|--|
-> | Nome1  | 123456  | Eng. de Computação|
-> | Nome2  | 123456  | Física Médica|
-> | Nome3  | 123456  | XXX|
+> | Rafael Cirino  | 223730  | Eng. Elétrica|
 
 
 ## Descrição do Projeto
-> Descrição do tema do projeto, incluindo contexto gerador, motivação.
-> Descrição do objetivo principal do projeto.
-> Subseções podem ser criadas para organizar o texto.
+> Observando o trabalho que meu pai tinha ao chegar do supermercado e ter que adicionar item por item da compra em uma planilha excel, pensei por que não deselvover um algoritmo capaz de a partir de uma imagem extrair as informações contidas na nota fiscal
+
 
 ## Plano de Trabalho
 > Nesta primeira entrega, seu grupo deve ser capaz de identificar quais são as etapas necessárias para alcançar o objetivo proposto.
 > Nesta seção, identifique claramente essas etapas, estimando o tempo que o seu grupo gastará em cada uma delas.
 > Por exemplo:
-> * Etapa 1 (1 semana): Estudo de técnicas de segmentação de imagens
+> * Etapa 1 (1 semana): Estudo de técnicas OCR (Reconhecimento ótico de caracteres)
+>    - Pesquisar sobre o funcionamento de algoritmos que indentificam texto em imagem 
+> * Etapa 2 (2 semana): Blibliotecas, planilha e padrões
+>   - Pesquisar bibliotecas para Python que reconhecem texto em imagem e decidir sobre utilizar uma ou desenvolver uma própria. 
+>   - Pensar qual o melhor formato para salvar as informações em .csv, google sheets ou planilha padrão do Excel.
+>   - Indentificar padrões contidos em diferentes notas fiscais.
+> * Etapa 3 (6 semanas): Codificação.
+>   - Desenvolver o conversor de texto em imagem para uma planilha, 
+>   - Validar e testar para os mais diferentes dados possíveis
+>   - Redigir o relatório a ser entregue no final
 > 
->     Descrição do que será realizado na Etapa 1.
-> * Etapa 2 (1 semana): Obtenção de dados pública de imagens de laranjas
-> 
->     Descrição do que será realizado na Etapa 2.
->     
-> * Etapa 3 (2 semanas): Codificação e Testes.
-> 
->     Descrição do que será realizado na Etapa 3.
->     
-> e assim por diante.
-> 
-> Inclua no seu plano de trabalho a etapa de escrita de relatório final do projeto.
+> OBS: Ao longo das etapas vou montar um banco de dados com imagens de nota fiscal para validação ao final do projeto
 
 ## Referências Bibliográficas
-> Nesta primeira entrega do projeto você já deve apontar as referências bibliográficas iniciais que você adotará no projeto.
+> * How to OCR with Tesseract, OpenCV and Python - https://nanonets.com/blog/ocr-with-tesseract/
+>
+> * OCR a document, form, or invoice with Tesseract, OpenCV, and Python - https://pyimagesearch.com/2020/09/07/ocr-a-document-form-or-invoice-with-tesseract-opencv-and-python/
+>
+> * “Lendo imagens”! — Uma abordagem a OCR com Google tesseract e Python! - https://blog.codeexpertslearning.com.br/lendo-imagens-uma-abordagem-%C3%A0-ocr-com-google-tesseract-e-python-ee8e8009f2ab
