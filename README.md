@@ -1,12 +1,12 @@
 # Converter-nota-fiscal-em-planilha
-Biblioteca que faz a conversão dos dados contidos em uma nota fiscal para planilha
+Biblioteca que faz a conversão dos dados contidos em uma nota fiscal para planilhaaa
 
 # `<Título em Português do Projeto>`
 # `<Project Title in in English>`
 
 ## Apresentação
 
-O presente projeto foi originado no contexto das atividades da disciplina de pós-graduação *EA979A - Introdução a Computação Gráfica e Processamento de Imagens*, 
+TEste, O presente projeto foi originado no contexto das atividades da disciplina de pós-graduação *EA979A - Introdução a Computação Gráfica e Processamento de Imagens*, 
 oferecida no primeiro semestre de 2022, na Unicamp, sob supervisão da Profa. Dra. Paula Dornhofer Paro Costa, do Departamento de Engenharia de Computação e Automação (DCA) da Faculdade de Engenharia Elétrica e de Computação (FEEC).
 
 > Incluir nome RA e foco de especialização de cada membro do grupo. Os grupos devem ter no máximo três integrantes.
