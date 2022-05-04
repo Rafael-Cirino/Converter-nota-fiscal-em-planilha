@@ -1,4 +1,4 @@
-# `Converter nota fiscal em planilha`
+# `Conversor de nota fiscal em planilha`
 # `Convert invoice to spreadsheet`
 
 ## Apresentação
