@@ -43,7 +43,9 @@ O Pytesseract, é um wrapper do Tesseract para python que em conjunto com a bibl
 
 <figure>
     <img src="Image/tesseract.png"
-         alt="Pytesseract">
+         alt="Pytesseract"
+         height="70%"
+         width="70%">
     <figcaption>Loki com o pytesseract</figcaption>
 </figure>
 
