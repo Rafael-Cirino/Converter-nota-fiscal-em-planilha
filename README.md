@@ -44,11 +44,16 @@ O Pytesseract, é um wrapper do Tesseract para python que em conjunto com a bibl
 <figure>
     <img src="Image/tesseract.png"
          alt="Pytesseract"
-         height="70%"
-         width="70%">
+         height="55%"
+         width="55%">
     <figcaption>Loki com o pytesseract</figcaption>
 </figure>
 
+### Requirements
+> [Tesseract](https://github.com/tesseract-ocr/tessdoc) - v5.0.1
+> Pytesseract - pip install pytesseract
+> Numpy - pip install numpy
+> Pillow - pip install pillow
 ## Referências Bibliográficas
 > * How to OCR with Tesseract, OpenCV and Python - https://nanonets.com/blog/ocr-with-tesseract/
 >
