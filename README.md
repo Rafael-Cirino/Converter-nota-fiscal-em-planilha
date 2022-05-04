@@ -42,7 +42,7 @@ O Tesseract é um mecanismo de recocimento de texto utilizando OCR, suporta uma 
 O Pytesseract, é um wrapper do Tesseract para python que em conjunto com a biblioteca PIL torna possível realizar essa técnica de reconhecimento sobre uma imagem
 
 <figure>
-    <img src="Image/tesseract.PNG"
+    <img src="Image/tesseract.png"
          alt="Pytesseract">
     <figcaption>Loki com o pytesseract</figcaption>
 </figure>
