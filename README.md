@@ -32,6 +32,21 @@ oferecida no primeiro semestre de 2022, na Unicamp, sob supervisão da Profa. Dr
 > 
 > OBS: Ao longo das etapas vou montar um banco de dados com imagens de nota fiscal para validação ao final do projeto
 
+## CNFP
+### Sobre o OCR
+OCR é um acrónimo para o inglês Optical Character Recognition, é uma tecnologia para reconhecer caracteres a partir de um arquivo de imagem ou mapa de bits sejam eles escaneados, escritos a mão, datilografados ou impressos. Dessa forma, através do OCR é possível obter um arquivo de texto editável.
+
+### Tesseract e Pytesseract
+O Tesseract é um mecanismo de recocimento de texto utilizando OCR, suporta uma grande variedade de idiomas. Tendo uma imagem como entrada, ele realiza alguns processamentos a fim de obter menos ruídos, em seguida, utilizando uma RNN chamada LSMT(Muito boa para reconhecer sequências longas) reconhece o texto contigo na imagem retornando uma string.
+
+O Pytesseract, é um wrapper do Tesseract para python que em conjunto com a biblioteca PIL torna possível realizar essa técnica de reconhecimento sobre uma imagem
+
+<figure>
+    <img src="Image/tesseract.PNG"
+         alt="Pytesseract">
+    <figcaption>Loki com o pytesseract</figcaption>
+</figure>
+
 ## Referências Bibliográficas
 > * How to OCR with Tesseract, OpenCV and Python - https://nanonets.com/blog/ocr-with-tesseract/
 >
