@@ -12,11 +12,15 @@ from PIL import Image
 ocr.pytesseract.tesseract_cmd = PATH_TESSERACT  # Defini o caminho para Tesseract
 
 from filters import filters
+import cv2
 
 fi = filters()
 
 # Colocando os canais em ordem RGB
-image_ocr = Image.open(PAST_TEST + "n_5.jpg").convert("RGB")
+#image_ocr = Image.open(PAST_TEST + "n_3.png").convert("RGB")
+image_ocr = cv2.imread(PAST_TEST + "n_3.png")
+h, w, d = image_ocr.shape
+image_ocr = cv2.resize(image_ocr, (4*int(w), 4*int(h)), interpolation = cv2.INTER_CUBIC)
 
 image_ocr = fi.dim_ruido(image_ocr)
 
