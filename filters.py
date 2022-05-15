@@ -19,10 +19,10 @@ class filters:
         npimagem = np.asarray(image).astype(np.uint8)
         return cv2.cvtColor(npimagem, cv2.COLOR_BGR2GRAY)
     
-    def trunc_bin(self, image_ocr):
+    def threshold(self, image_ocr, v_thresh=127):
 
-        return cv2.threshold(image_ocr, 127, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
-        #return cv2.threshold(image_ocr, 127, 255, cv2.THRESH_TRUNC)[1]
+        return cv2.threshold(image_ocr,  v_thresh, 255, cv2.THRESH_BINARY)[1]
+        #return cv2.threshold(image_ocr, 127, 255, cv2.THRESH_TRUNC)[1] # | cv2.THRESH_OTSU
     
     # noise removal
     def remove_noise(self, image):
