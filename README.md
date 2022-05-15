@@ -80,6 +80,7 @@ A fim de tornar as letras e digitos mais nitidos para o ocr são utilizados 3 fi
 
 <style>
 div.box {
+    width: 150px;
 	display: inline-block;
 }
 </style>
@@ -188,19 +189,27 @@ Ss PERU
 </table>
 
 <div class="box">
-    <img src="Image/n_3.png">
+    <img src="Image/n_3.png"
+    height="50%"
+    width="50%">
     <span>  Original </span>
 </div>
 <div class="box">
-    <img src="Image/c_n_3.png_threshold.jpg">
+    <img src="Image/c_n_3.png_threshold.jpg"
+    height="50%"
+    width="50%">
     <span>  Threshold </span>
 </div>
 <div class="box">
-    <img src="Image/c_n_3.png_bilateral.jpg"/>
+    <img src="Image/c_n_3.png_bilateral.jpg"
+    height="50%"
+    width="50%"/>
     <span> Bilateral </span>
 </div>
 <div class="box">
-    <img src="Image/c_n_3.png_sharpein.jpg"/>
+    <img src="Image/c_n_3.png_sharpein.jpg"
+    height="50%"
+    width="50%"/>
     <span> Sharpein </span>
 </div>
 
