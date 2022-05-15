@@ -54,7 +54,9 @@ O Pytesseract, é um wrapper do Tesseract para python que em conjunto com a bibl
 A fim de tornar as letras e digitos mais nitidos para o ocr são utilizados 3 filtros diferentes: threshold, bilateralFilter e sharpein. Antes da utilização deles o tamanho da imagem é aumentada em 4 nas duas direções, com isso é possível garantir que os caracteres tenham aproximadamente pelo menos 10 pixels, tamanho necessário para reconhecimento ocr
 
 <div class="box">
-    <img src="Image/n_5.jpg">
+    <img src="Image/n_5.jpg"
+    height="55%"
+    width="55%">
     <span>  Original </span>
 </div>
 <div class="box">
@@ -62,7 +64,9 @@ A fim de tornar as letras e digitos mais nitidos para o ocr são utilizados 3 fi
     <span>  Threshold </span>
 </div>
 <div class="box">
-    <img src="Image/c_n_5.jpg_bilateral.jpg"/>
+    <img src="Image/c_n_5.jpg_bilateral.jpg"
+    height="55%"
+    width="55%"/>
     <span> Bilateral </span>
 </div>
 <div class="box">
@@ -72,8 +76,6 @@ A fim de tornar as letras e digitos mais nitidos para o ocr são utilizados 3 fi
 
 <style>
 div.box {
-	height: "55%";
-    width: "55%";
 	display: inline-block;
 }
 </style>
