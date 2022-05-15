@@ -72,7 +72,8 @@ A fim de tornar as letras e digitos mais nitidos para o ocr são utilizados 3 fi
 
 <style>
 div.box {
-	width: 100px;
+	height: "55%";
+    width: "55%";
 	display: inline-block;
 }
 </style>
