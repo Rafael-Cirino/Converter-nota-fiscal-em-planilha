@@ -63,25 +63,29 @@ div.box {
 <div class="box">
     <img src="Image/n_5.jpg"
     height="40%"
-    width="40%">
+    width="40%"
+    display="inline-block">
     <span>  Original </span>
 </div>
 <div class="box">
     <img src="Image/c_n_5.jpg_threshold.jpg"
     height="40%"
-    width="40%"/>
+    width="40%"
+    display="inline-block"/>
     <span>  Threshold </span>
 </div>
 <div class="box">
     <img src="Image/c_n_5.jpg_bilateral.jpg"
     height="40%"
-    width="40%"/>
+    width="40%"
+    display="inline-block"/>
     <span> Bilateral </span>
 </div>
 <div class="box">
     <img src="Image/c_n_5.jpg_sharpein.jpg"
     height="40%"
-    width="40%"/>
+    width="40%"
+    display="inline-block"/>
     <span> Sharpein </span>
 </div>
 
