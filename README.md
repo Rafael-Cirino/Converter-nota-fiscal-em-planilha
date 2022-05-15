@@ -55,22 +55,26 @@ A fim de tornar as letras e digitos mais nitidos para o ocr são utilizados 3 fi
 
 <div class="box">
     <img src="Image/n_5.jpg"
-    height="55%"
-    width="55%">
+    height="30%"
+    width="30%">
     <span>  Original </span>
 </div>
 <div class="box">
-    <img src="Image/c_n_5.jpg_threshold.jpg">
+    <img src="Image/c_n_5.jpg_threshold.jpg"
+    height="30%"
+    width="30%"/>
     <span>  Threshold </span>
 </div>
 <div class="box">
     <img src="Image/c_n_5.jpg_bilateral.jpg"
-    height="55%"
-    width="55%"/>
+    height="30%"
+    width="30%"/>
     <span> Bilateral </span>
 </div>
 <div class="box">
-    <img src="Image/c_n_5.jpg_sharpein.jpg"/>
+    <img src="Image/c_n_5.jpg_sharpein.jpg"
+    height="30%"
+    width="30%"/>
     <span> Sharpein </span>
 </div>
 
