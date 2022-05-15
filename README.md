@@ -49,6 +49,12 @@ O Pytesseract, é um wrapper do Tesseract para python que em conjunto com a bibl
     <figcaption>Loki com o pytesseract</figcaption>
 </figure>
 
+### Requirements
+> - [Tesseract](https://github.com/tesseract-ocr/tessdoc) - v5.0.1
+> - Pytesseract - pip install pytesseract
+> - Numpy - pip install numpy
+> - Pillow - pip install pillow
+
 ### Filtragem
 
 A fim de tornar as letras e digitos mais nitidos para o ocr são utilizados 3 filtros diferentes: threshold, bilateralFilter e sharpein. Antes da utilização deles o tamanho da imagem é aumentada em 4 nas duas direções, com isso é possível garantir que os caracteres tenham aproximadamente pelo menos 10 pixels, tamanho necessário para reconhecimento ocr
@@ -109,15 +115,21 @@ A fim de tornar as letras e digitos mais nitidos para o ocr são utilizados 3 fi
     <span> Sharpein </span>
 </div>
 
+### QR code
 
-### Requirements
-> - [Tesseract](https://github.com/tesseract-ocr/tessdoc) - v5.0.1
-> - Pytesseract - pip install pytesseract
-> - Numpy - pip install numpy
-> - Pillow - pip install pillow
+<figure>
+    <img src="Image/c_qr_1.jpeg_qrcode.jpg"
+         alt="Pytesseract"
+         height="60%"
+         width="60%">
+    <figcaption>Indentificando QR code</figcaption>
+</figure>
+
 ## Referências Bibliográficas
 > * How to OCR with Tesseract, OpenCV and Python - https://nanonets.com/blog/ocr-with-tesseract/
 >
 > * OCR a document, form, or invoice with Tesseract, OpenCV, and Python - https://pyimagesearch.com/2020/09/07/ocr-a-document-form-or-invoice-with-tesseract-opencv-and-python/
 >
 > * “Lendo imagens”! — Uma abordagem a OCR com Google tesseract e Python! - https://blog.codeexpertslearning.com.br/lendo-imagens-uma-abordagem-%C3%A0-ocr-com-google-tesseract-e-python-ee8e8009f2ab
+>
+> https://pypi.org/project/pyzbar/
