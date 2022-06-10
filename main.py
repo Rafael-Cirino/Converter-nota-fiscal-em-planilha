@@ -15,6 +15,12 @@ from filters import filters
 from qr_code import *
 import cv2
 
+def files_in_folder(path_folder):
+    caminhos = [os.path.join(path_folder, nome) for nome in os.listdir(path_folder)]
+    arquivos = [arq for arq in caminhos if os.path.isfile(arq)]
+
+    print(arquivos)
+    return arquivos
 
 def filter_qrcode(name_image):
     fi = filters()
@@ -53,7 +59,9 @@ def image_save(image_save, name_image):
 if __name__ == "__main__":
     name_image = "n_4.jpg"
 
-    filter_qrcode("Test/" + name_image)
+    #filter_qrcode("Test/" + name_image)
+
+    files_in_folder(PAST_DATA + "Test/")
 
 # s-------------------------------------
 # Mediana, sobel, blur --> sharpein
