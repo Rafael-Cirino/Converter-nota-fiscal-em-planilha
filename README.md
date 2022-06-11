@@ -50,10 +50,13 @@ O Pytesseract, é um wrapper do Tesseract para python que em conjunto com a bibl
 </figure>
 
 ### Requirements
-> - [Tesseract](https://github.com/tesseract-ocr/tessdoc) - v5.0.1
-> - Pytesseract - pip install pytesseract
 > - Numpy - pip install numpy
 > - Pillow - pip install pillow
+> - OCR
+>   - [Tesseract](https://github.com/tesseract-ocr/tessdoc) - v5.0.1
+>   - Pytesseract - pip install pytesseract
+> - QR code
+>   - pip install pyzbar
 
 ### Filtragem
 
@@ -132,4 +135,8 @@ A fim de tornar as letras e digitos mais nitidos para o ocr são utilizados 3 fi
 >
 > * “Lendo imagens”! — Uma abordagem a OCR com Google tesseract e Python! - https://blog.codeexpertslearning.com.br/lendo-imagens-uma-abordagem-%C3%A0-ocr-com-google-tesseract-e-python-ee8e8009f2ab
 >
-> https://pypi.org/project/pyzbar/
+> * https://pypi.org/project/pyzbar/
+>
+> * https://medium.com/machina-sapiens/raspagem-de-dados-com-python-e-beautifulsoup-1b1b7019774c
+> 
+> * https://imasters.com.br/back-end/como-fazer-web-scraping-com-python

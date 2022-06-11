@@ -9,15 +9,15 @@ def recognize_qrcode(image_filter):
     barcode = pyzbar.decode(image_filter, symbols=[ZBarSymbol.QRCODE])
     if barcode:
         barcodeData = barcode[0].data
-        print(str(barcodeData), barcode)
+        # print(str(barcodeData))
 
         return str(barcodeData), barcode
-    
+
     return False, False
 
 
 def draw_qrcode(image_qrcode, data_qrcode=False):
-    if not(data_qrcode):
+    if not (data_qrcode):
         data_qrcode = pyzbar.decode(image_qrcode)
 
     draw = ImageDraw.Draw(image_qrcode)
@@ -28,5 +28,5 @@ def draw_qrcode(image_qrcode, data_qrcode=False):
             outline=(255, 0, 0),
             width=10,
         )
-    
+
     return image_qrcode

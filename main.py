@@ -13,7 +13,9 @@ ocr.pytesseract.tesseract_cmd = PATH_TESSERACT  # Defini o caminho para Tesserac
 
 from filters import filters
 from qr_code import *
+from scraping_html import selenium_open
 import cv2
+
 
 def files_in_folder(path_folder):
     caminhos = [os.path.join(path_folder, nome) for nome in os.listdir(path_folder)]
@@ -21,6 +23,7 @@ def files_in_folder(path_folder):
 
     print(arquivos)
     return arquivos
+
 
 def filter_qrcode(name_image):
     fi = filters()
@@ -51,17 +54,22 @@ def filter_qrcode(name_image):
     image_qrcode = draw_qrcode(image_qrcode, data_qrcode)
     image_save(image_qrcode, "test21")
 
+    return link_invoice
+
 
 def image_save(image_save, name_image):
     image_save.save(PAST_DATA + f"cache/c_{name_image}_qrcode.jpg")
 
 
 if __name__ == "__main__":
-    name_image = "n_4.jpg"
+    name_image = "p (4).jpg"
 
-    #filter_qrcode("Test/" + name_image)
+    link = filter_qrcode("my/" + name_image).split("'")[1]
+    print(link)
+    selenium_open(link)
+    
 
-    files_in_folder(PAST_DATA + "Test/")
+    #files_in_folder(PAST_DATA + "Test/")
 
 # s-------------------------------------
 # Mediana, sobel, blur --> sharpein
