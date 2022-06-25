@@ -62,7 +62,7 @@ def image_save(image_save, name_image):
 
 
 if __name__ == "__main__":
-    name_image = "p (4).jpg"
+    name_image = "qr (2).jpg"
 
     link = filter_qrcode("my/" + name_image).split("'")[1]
     print(link)
