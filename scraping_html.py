@@ -34,7 +34,6 @@ def open_html(link):
 
 def selenium_open(link):
     from selenium import webdriver
-    from selenium.webdriver.common.by import By
 
     options = webdriver.ChromeOptions()
     options.add_experimental_option("detach", False)
@@ -44,7 +43,6 @@ def selenium_open(link):
     # driver = webdriver.Chrome(chrome_options=options, executable_path=r'C:\WebDrivers\chromedriver.exe')
     # driver.close()
     driver.get(link)
-    posts = driver.find_element(By.ID, "conteudo")
     html = driver.page_source
 
     # print(posts.text)
@@ -78,8 +76,8 @@ def dict_conteudo(list_conteudo):
     dict_out = {}
 
     header = list_conteudo[0][0].split("\n\n")
-    dict_out["store"] = header[0].lower()
-    dict_out["CNPJ"] = header[1]
+    dict_out["store"] = header[0].replace("\n", "")
+    dict_out["CNPJ"] = header[1].replace("\n", " ")
     dict_out["product"] = {}
 
     # Extraindo os produtos da nota
@@ -109,7 +107,7 @@ def dict_conteudo(list_conteudo):
                 dict_out["product"][name]["vl_unit"] = float(vl_unit)
                 dict_out["product"][name]["vl_total"] = value_product
 
-    dict_out["amount"] = value_product
+    dict_out["amount"] = amount
     for i, value in enumerate(list_conteudo[5]):
         if value != "":
             if regex.search(r"total de itens", value):
@@ -118,20 +116,22 @@ def dict_conteudo(list_conteudo):
 
             elif regex.search(r"pagar", value):
                 product = value.split("\n")
-                
+
                 dict_out["amount_pay"] = float(product[1].replace(",", "."))
-                dict_out["discount"] = value_product - float(product[1].replace(",", "."))
+                dict_out["discount"] = amount - float(product[1].replace(",", "."))
 
             elif regex.search(r"forma de", value):
                 product = list_conteudo[5][i + 1].split("\n\n")
                 dict_out["payment"] = product[0]
                 dict_out["value_payment"] = float(product[1].replace(",", "."))
-                dict_out["transshipment"] = float(product[1].replace(",", ".")) - value_product
-            
+                # troco
+                dict_out["transshipment"] = float(product[1].replace(",", ".")) - dict_out["amount_pay"]
+
             elif regex.search(r"tributos totais", value):
                 product = value.split("\xa0r$\n")
-                print(product)
-                dict_out["taxation"] = float(product[1].replace("\n\n", "").replace(",", "."))
+                dict_out["taxation"] = float(
+                    product[1].replace("\n\n", "").replace(",", ".")
+                )
 
     print(dict_out)
     return
