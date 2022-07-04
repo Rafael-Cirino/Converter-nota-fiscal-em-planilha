@@ -23,17 +23,17 @@ def files_in_folder(path_folder):
     caminhos = [os.path.join(path_folder, nome) for nome in os.listdir(path_folder)]
     arquivos = [arq for arq in caminhos if os.path.isfile(arq)]
 
-    print(arquivos)
+    # print(arquivos)
     return arquivos
 
 
 def filter_qrcode(name_image):
     fi = filters()
 
-    image_ocr = cv2.imread(PAST_DATA + name_image)
+    image_ocr = cv2.imread(name_image)  # cv2.imread(PAST_DATA + name_image)
     h, w, d = image_ocr.shape
     image_ocr = cv2.resize(
-        image_ocr, (2 * int(w), 2 * int(h)), interpolation=cv2.INTER_CUBIC
+        image_ocr, (5 * int(w), 5 * int(h)), interpolation=cv2.INTER_CUBIC
     )
 
     param_image = fi.param_tresh(image_ocr)
@@ -45,19 +45,21 @@ def filter_qrcode(name_image):
         cv2.filter2D(src=image_ocr, ddepth=-1, kernel=kernel_value),
     ]
 
-    for i,filtered in enumerate(list_filter):
+    for i, filtered in enumerate(list_filter):
         image_ocr = filtered
 
         image_qrcode = Image.fromarray(image_ocr).convert("RGB")
         link_invoice, data_qrcode = recognize_qrcode(image_qrcode)
         if link_invoice:
             break
-    
-    if not(link_invoice):
-        return False, -1
 
-    image_qrcode = draw_qrcode(image_qrcode, data_qrcode)
-    image_save(image_qrcode, "test21")
+    print(data_qrcode)
+
+    if not (link_invoice):
+        return False, i + 1
+
+    # image_qrcode = draw_qrcode(image_qrcode, data_qrcode)
+    # image_save(image_qrcode, "test21")
 
     return link_invoice, i
 
@@ -71,24 +73,26 @@ if __name__ == "__main__":
     list_check = []
     list_time = []
 
-    time_init = time.time()
-    link, i = filter_qrcode("my/" + name_image)
-    time_end = time.time() - time_init
-    
-    link = link.split("'")[1]
-    print(link)
-    list_check.append(i)
-    list_time.append(time_end)
+    for file in files_in_folder(PAST_DATA + "Dataset/"):
+        time_init = time.time()
+        link, i = filter_qrcode(file)
+        time_end = time.time() - time_init
 
-    
+        if link:
+            link = link.split("'")[1]
+        print(link, i)
+        list_check.append(i)
+        list_time.append(time_end)
+        #break
+
     print(list_check)
-    print("-1 ", list_check.count(-1))
+    print("4 ", list_check.count(4))
     print("0 ", list_check.count(0))
     print("1 ", list_check.count(1))
     print("2 ", list_check.count(2))
     print("3 ", list_check.count(3))
 
-    print("tempo médio: ", sum(list_time)/len(list_time))
+    print("tempo médio: ", sum(list_time) / len(list_time))
     print(list_time)
 
     """
@@ -100,7 +104,7 @@ if __name__ == "__main__":
     write_csv(data_dict)
     """
 
-    #files_in_folder(PAST_DATA + "Test/")
+    # files_in_folder(PAST_DATA + "Test/")
 
 # s-------------------------------------
 # Mediana, sobel, blur --> sharpein

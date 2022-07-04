@@ -58,7 +58,18 @@ O Pytesseract, é um wrapper do Tesseract para python que em conjunto com a bibl
 > - QR code
 >   - pip install pyzbar
 
-### Filtragem
+### Filtros
+
+#### Threshold
+Esse filtro pode ser também chamado de 8 ou 80, é definido um valor limite e tudo que estiver abaixo dele é 0 e o que estiver acima é o valor máximo possível
+
+#### Bilateral
+Utilizado para remover ruído da imagem, este filtro guassiano busca preservar as bordas enquanto desfoca a região mais central da imagem considerando os pixels vizinhos.
+
+#### sharpein
+Este filtro de média, busca realçar as bordas, tornando as mais nitidas para a leitura do algoritmo.
+
+#### Filtragem
 
 A fim de tornar as letras e digitos mais nitidos para o ocr são utilizados 3 filtros diferentes: threshold, bilateralFilter e sharpein. Antes da utilização deles o tamanho da imagem é aumentada em 4 nas duas direções, com isso é possível garantir que os caracteres tenham aproximadamente pelo menos 10 pixels, tamanho necessário para reconhecimento ocr
 
@@ -118,7 +129,17 @@ A fim de tornar as letras e digitos mais nitidos para o ocr são utilizados 3 fi
     <span> Sharpein </span>
 </div>
 
+### Mudança de abordagem
+Após testes realizado com o OCR nas notas fiscais, chegou-se a conclusão que não seria eficiente continuar com o método proposto, visto que as notas ficais não seguem um padrão e mesmo após a passagem dos filtros pela imagem, está muito complicado realçar as bordas das letras, de forma que uma não se junte com outra.
+
+Em virtude disso, será feita uma mudança de abordagem para indentificar o QRcode embutido em cada cupom fiscal, utilizando a biblioteca pyzbar.
+
 ### QR code
+Um QRcode é dividido em blocos, sendo o tamanho mais comum de 21x21, podendo armazenar 8bytes de informação. Qualquer um deles possui uma margem branca em sua borda, indicando para o algoritmo que ali termina o código. Aqueles 3 quadrados bem caracteristicos de todo QRcode, é para informar ao algoritmo que se trata de um QRcode e definir os limites externos.
+
+No canto inferior direito há a presença de um quadrado, cuja função é calibrar o leitor, é ele que irá indicar qual o padrão de espaçamento. Há também um pequeno campo informando a versão do QRcode ali presente, e todo o restante conrreponde aos blocos de informação comentado anteriormente
+
+
 
 <figure>
     <img src="Image/c_qr_1.jpeg_qrcode.jpg"
@@ -140,3 +161,5 @@ A fim de tornar as letras e digitos mais nitidos para o ocr são utilizados 3 fi
 > * https://medium.com/machina-sapiens/raspagem-de-dados-com-python-e-beautifulsoup-1b1b7019774c
 > 
 > * https://imasters.com.br/back-end/como-fazer-web-scraping-com-python
+>
+> * https://www.kaspersky.com.br/resource-center/definitions/what-is-a-qr-code-how-to-scan
