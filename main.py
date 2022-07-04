@@ -14,6 +14,7 @@ ocr.pytesseract.tesseract_cmd = PATH_TESSERACT  # Defini o caminho para Tesserac
 from filters import filters
 from qr_code import *
 from scraping_html import selenium_open
+from py_csv import write_csv
 import cv2
 
 
@@ -50,6 +51,9 @@ def filter_qrcode(name_image):
         link_invoice, data_qrcode = recognize_qrcode(image_qrcode)
         if link_invoice:
             break
+    
+    if not(link_invoice):
+        return False
 
     image_qrcode = draw_qrcode(image_qrcode, data_qrcode)
     image_save(image_qrcode, "test21")
@@ -66,7 +70,10 @@ if __name__ == "__main__":
 
     link = filter_qrcode("my/" + name_image).split("'")[1]
     print(link)
-    selenium_open(link)
+    data_dict = selenium_open(link)
+
+    print(data_dict)
+    write_csv(data_dict)
     
 
     #files_in_folder(PAST_DATA + "Test/")

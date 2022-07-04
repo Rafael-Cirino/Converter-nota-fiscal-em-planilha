@@ -67,7 +67,9 @@ def selenium_open(link):
             f.write(line)
             list_out.append(line.split("\n\n\n"))
 
-    dict_conteudo(list_out[3:])
+    dict_out = dict_conteudo(list_out[3:])
+
+    return dict_out
 
     # driver = webdriver.Chrome("chromedriver.exe") # Baixe o Chrome WebDriver em https://c
 
@@ -134,7 +136,7 @@ def dict_conteudo(list_conteudo):
                 )
 
     print(dict_out)
-    return
+    return dict_out
 
 
 if __name__ == "__main__":
