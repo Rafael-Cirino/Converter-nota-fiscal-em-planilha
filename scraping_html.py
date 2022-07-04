@@ -135,7 +135,7 @@ def dict_conteudo(list_conteudo):
                     product[1].replace("\n\n", "").replace(",", ".")
                 )
 
-    print(dict_out)
+    #print(dict_out)
     return dict_out
 
 

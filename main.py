@@ -1,4 +1,5 @@
 import os
+import time
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -44,7 +45,7 @@ def filter_qrcode(name_image):
         cv2.filter2D(src=image_ocr, ddepth=-1, kernel=kernel_value),
     ]
 
-    for filtered in list_filter:
+    for i,filtered in enumerate(list_filter):
         image_ocr = filtered
 
         image_qrcode = Image.fromarray(image_ocr).convert("RGB")
@@ -53,12 +54,12 @@ def filter_qrcode(name_image):
             break
     
     if not(link_invoice):
-        return False
+        return False, -1
 
     image_qrcode = draw_qrcode(image_qrcode, data_qrcode)
     image_save(image_qrcode, "test21")
 
-    return link_invoice
+    return link_invoice, i
 
 
 def image_save(image_save, name_image):
@@ -67,14 +68,37 @@ def image_save(image_save, name_image):
 
 if __name__ == "__main__":
     name_image = "qr (2).jpg"
+    list_check = []
+    list_time = []
 
-    link = filter_qrcode("my/" + name_image).split("'")[1]
+    time_init = time.time()
+    link, i = filter_qrcode("my/" + name_image)
+    time_end = time.time() - time_init
+    
+    link = link.split("'")[1]
     print(link)
+    list_check.append(i)
+    list_time.append(time_end)
+
+    
+    print(list_check)
+    print("-1 ", list_check.count(-1))
+    print("0 ", list_check.count(0))
+    print("1 ", list_check.count(1))
+    print("2 ", list_check.count(2))
+    print("3 ", list_check.count(3))
+
+    print("tempo médio: ", sum(list_time)/len(list_time))
+    print(list_time)
+
+    """
+    link = filter_qrcode("my/" + name_image).split("'")[1]
+    
     data_dict = selenium_open(link)
 
     print(data_dict)
     write_csv(data_dict)
-    
+    """
 
     #files_in_folder(PAST_DATA + "Test/")
 
