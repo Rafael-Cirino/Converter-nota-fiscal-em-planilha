@@ -138,8 +138,8 @@ Diagrama de processo do algoritmo desenvolvido
 <figure>
     <img src="Image/Algoritmo.png"
          alt="Algoritmo"
-         height="60%"
-         width="60%">
+         height="90%"
+         width="90%">
     <figcaption>Diagramam do algortitmo desenvolvido</figcaption>
 </figure>
 
@@ -149,10 +149,10 @@ Diagrama de processo do algoritmo desenvolvido
 A seguir há um exemplo da planilha que pode ser gerada com este algoritmo
 
 <figure>
-    <img src="Image/Exemplo.png"
+    <img src="Image/Exemplo.PNG"
          alt="Exempo"
-         height="60%"
-         width="60%">
+         height="90%"
+         width="90%">
     <figcaption>Exemplo de planilha</figcaption>
 </figure>
 
