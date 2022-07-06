@@ -33,7 +33,7 @@ def filter_qrcode(name_image):
     image_ocr = cv2.imread(name_image)  # cv2.imread(PAST_DATA + name_image)
     h, w, d = image_ocr.shape
     image_ocr = cv2.resize(
-        image_ocr, (5 * int(w), 5 * int(h)), interpolation=cv2.INTER_CUBIC
+        image_ocr, (2 * int(w), 2 * int(h)), interpolation=cv2.INTER_CUBIC
     )
 
     param_image = fi.param_tresh(image_ocr)
@@ -52,8 +52,6 @@ def filter_qrcode(name_image):
         link_invoice, data_qrcode = recognize_qrcode(image_qrcode)
         if link_invoice:
             break
-
-    print(data_qrcode)
 
     if not (link_invoice):
         return False, i + 1
@@ -77,6 +75,7 @@ if __name__ == "__main__":
         time_init = time.time()
         link, i = filter_qrcode(file)
         time_end = time.time() - time_init
+        print(time_end)
 
         if link:
             link = link.split("'")[1]

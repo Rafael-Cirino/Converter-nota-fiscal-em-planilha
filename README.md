@@ -6,31 +6,13 @@
 O presente projeto foi originado no contexto das atividades da disciplina de pós-graduação *EA979A - Introdução a Computação Gráfica e Processamento de Imagens*, 
 oferecida no primeiro semestre de 2022, na Unicamp, sob supervisão da Profa. Dra. Paula Dornhofer Paro Costa, do Departamento de Engenharia de Computação e Automação (DCA) da Faculdade de Engenharia Elétrica e de Computação (FEEC).
 
-> |Nome  | RA | Curso|
+> |Nome  | Curso|
 > |--|--|--|
-> | Rafael Cirino  | 223730  | Eng. Elétrica|
+> | Rafael Cirino | Eng. Elétrica|
 
 
 ## Descrição do Projeto
 > Observando o trabalho que meu pai tinha ao chegar do supermercado e ter que adicionar item por item da compra em uma planilha excel, pensei por que não deselvover um algoritmo capaz de a partir de uma imagem extrair as informações contidas na nota fiscal
-
-
-## Plano de Trabalho
-> Nesta primeira entrega, seu grupo deve ser capaz de identificar quais são as etapas necessárias para alcançar o objetivo proposto.
-> Nesta seção, identifique claramente essas etapas, estimando o tempo que o seu grupo gastará em cada uma delas.
-> Por exemplo:
-> * Etapa 1 (1 semana): Estudo de técnicas OCR (Reconhecimento ótico de caracteres)
->    - Pesquisar sobre o funcionamento de algoritmos que indentificam texto em imagem 
-> * Etapa 2 (2 semana): Blibliotecas, planilha e padrões
->   - Pesquisar bibliotecas para Python que reconhecem texto em imagem e decidir sobre utilizar uma ou desenvolver uma própria. 
->   - Pensar qual o melhor formato para salvar as informações em .csv, google sheets ou planilha padrão do Excel.
->   - Indentificar padrões contidos em diferentes notas fiscais.
-> * Etapa 3 (6 semanas): Codificação.
->   - Desenvolver o conversor de texto em imagem para uma planilha, 
->   - Validar e testar para os mais diferentes dados possíveis
->   - Redigir o relatório a ser entregue no final
-> 
-> OBS: Ao longo das etapas vou montar um banco de dados com imagens de nota fiscal para validação ao final do projeto
 
 ## CNFP
 ### Sobre o OCR
@@ -64,7 +46,7 @@ O Pytesseract, é um wrapper do Tesseract para python que em conjunto com a bibl
 Esse filtro pode ser também chamado de 8 ou 80, é definido um valor limite e tudo que estiver abaixo dele é 0 e o que estiver acima é o valor máximo possível
 
 #### Bilateral
-Utilizado para remover ruído da imagem, este filtro guassiano busca preservar as bordas enquanto desfoca a região mais central da imagem considerando os pixels vizinhos.
+Utilizado para remover ruído da imagem, este filtro gaussiano busca preservar as bordas enquanto desfoca a região mais central da imagem considerando os pixels vizinhos.
 
 #### sharpein
 Este filtro de média, busca realçar as bordas, tornando as mais nitidas para a leitura do algoritmo.
@@ -148,6 +130,34 @@ No canto inferior direito há a presença de um quadrado, cuja função é calib
          width="60%">
     <figcaption>Indentificando QR code</figcaption>
 </figure>
+
+#### Algoritmo
+
+Diagrama de processo do algoritmo desenvolvido
+
+<figure>
+    <img src="Image/Algoritmo.png"
+         alt="Algoritmo"
+         height="60%"
+         width="60%">
+    <figcaption>Diagramam do algortitmo desenvolvido</figcaption>
+</figure>
+
+
+#### Resultado
+
+A seguir há um exemplo da planilha que pode ser gerada com este algoritmo
+
+<figure>
+    <img src="Image/Exemplo.png"
+         alt="Exempo"
+         height="60%"
+         width="60%">
+    <figcaption>Exemplo de planilha</figcaption>
+</figure>
+
+Em relação a métrica de tempo e resultado para os filtros em série temos:
+
 
 ## Referências Bibliográficas
 > * How to OCR with Tesseract, OpenCV and Python - https://nanonets.com/blog/ocr-with-tesseract/
